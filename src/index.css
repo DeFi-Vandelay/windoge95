@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.desktop {
+  flex: 1;
+  overflow: auto;
+}

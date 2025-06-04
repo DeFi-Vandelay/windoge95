@@ -1,0 +1,16 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ReentrancyGuard",
+  "sourceName": "contracts/Windoge95.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b506001600081905550603f8060256000396000f3fe6080604052600080fdfea2646970667358221220d708f467384a74d8de5a94c0b07e5f79086e7b4fefefa4e9216240d2a06ab08d64736f6c63430008140033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220d708f467384a74d8de5a94c0b07e5f79086e7b4fefefa4e9216240d2a06ab08d64736f6c63430008140033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

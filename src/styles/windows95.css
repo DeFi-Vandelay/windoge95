@@ -1,0 +1,659 @@
+body {
+  background-color: #008080;
+  font-family: 'MS Sans Serif', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.desktop {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  background-image: url('../../public/wallpaper.png');
+  background-size: unset;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background-color: #c0c0c0;
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  border-top: 1px solid #ffffff;
+}
+
+.open-windows {
+  flex-grow: 1;
+  display: flex;
+  overflow-x: auto;
+}
+
+.taskbar-item {
+  height: 22px;
+  margin: 2px;
+  padding: 0 8px;
+  background-color: #c0c0c0;
+  border: 1px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+  max-width: 200px;
+}
+
+.taskbar-item:active {
+  border: 1px solid #808080;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.taskbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.wallet-connection {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  font-size: 11px;
+}
+
+.wallet-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+}
+
+.wallet-connection button,
+.disconnect-button {
+  height: 22px;
+  padding: 0 8px;
+  background-color: #c0c0c0;
+  border: 1px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.wallet-connection button:active,
+.disconnect-button:active {
+  border: 1px solid #808080;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.clock {
+  padding: 0 5px;
+  font-size: 11px;
+}
+
+.start-button {
+  display: flex;
+  align-items: center;
+  background-color: #c0c0c0;
+  border: 1px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  padding: 2px 5px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.start-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.start-menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  background-color: #c0c0c0;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.start-menu-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.window {
+  position: absolute;
+  background-color: #c0c0c0;
+  border: 1px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  min-width: 200px;
+  min-height: 100px;
+  resize: both;
+  overflow: auto;
+}
+
+.window.maximized {
+  resize: none;
+  overflow: hidden;
+}
+
+.title-bar {
+  background-color: #000080;
+  color: #ffffff;
+  padding: 2px 5px;
+  margin: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+}
+
+.close-button {
+  background-color: #c0c0c0;
+  border: 1px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  padding: 0 5px;
+}
+
+.window-content {
+  padding: 2px;
+  height: calc(100% - 34px);
+  overflow: auto;
+}
+
+.start-menu {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  background-color: #c0c0c0;
+  border: 1px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  padding: 2px;
+  display: flex;
+}
+
+.start-menu-stripe {
+  width: 21px;
+  background-color: #000080;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 5px 2px;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.start-menu-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.start-menu-item:hover {
+  background-color: #000080;
+  color: #ffffff;
+}
+
+.game-explorer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid #808080;
+}
+
+.explorer-toolbar {
+  display: flex;
+  padding: 5px;
+  background-color: #c0c0c0;
+  border-bottom: 1px solid #808080;
+}
+
+.explorer-toolbar button {
+  background-color: #c0c0c0;
+  border: 1px solid #c0c0c0;
+  margin-right: 5px;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
+.explorer-toolbar button.active {
+  border: 1px inset #808080;
+}
+
+.explorer-toolbar button img {
+  width: 16px;
+  height: 16px;
+}
+
+.explorer-content {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.explorer-tree {
+  width: 200px;
+  border-right: 1px solid #808080;
+  padding: 5px;
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+
+.tree-item {
+  display: flex;
+  align-items: center;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
+.tree-item:hover {
+  background-color: #000080;
+  color: #ffffff;
+}
+
+.tree-item.active {
+  background-color: #000080;
+  color: #ffffff;
+}
+
+.folder-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.explorer-files {
+  flex-grow: 1;
+  padding: 5px;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+.explorer-files.icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.explorer-files.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+  width: 80px;
+  text-align: center;
+}
+
+.explorer-files.list .game-item {
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.game-item:hover {
+  background-color: #000080;
+  color: #ffffff;
+}
+
+.game-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 5px;
+}
+
+.explorer-files.list .game-icon {
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+
+.game-name {
+  font-size: 12px;
+  word-wrap: break-word;
+}
+
+.explorer-statusbar {
+  padding: 2px 5px;
+  background-color: #c0c0c0;
+  border-top: 1px solid #808080;
+  font-size: 12px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 14px;
+}
+
+.notepad {
+  background-color: #ffffff;
+  border: 1px solid #808080;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
+  min-height: 100%;
+}
+
+.game-listing-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.game-listing-form input,
+.game-listing-form textarea,
+.game-listing-form select {
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 12px;
+  padding: 5px;
+  border: 1px solid #808080;
+  background-color: #ffffff;
+}
+
+.game-listing-form button {
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 12px;
+  padding: 5px 10px;
+  background-color: #c0c0c0;
+  border: 1px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  cursor: pointer;
+}
+
+.game-listing-form button:active {
+  border: 1px solid #808080;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.wallet-connection button {
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 12px;
+  padding: 2px 5px;
+  background-color: #c0c0c0;
+  border: 1px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  cursor: pointer;
+  margin-top: 1px;
+}
+
+.wallet-connection button:active {
+  border: 1px solid #808080;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.dao-voting {
+  padding: 10px;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 12px;
+}
+
+.game-vote-item {
+  background-color: #ffffff;
+  border: 1px solid #808080;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.game-vote-item h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.game-vote-item p {
+  margin: 5px 0;
+}
+
+.game-vote-item button {
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 12px;
+  padding: 2px 5px;
+  background-color: #c0c0c0;
+  border: 1px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.game-vote-item button:active {
+  border: 1px solid #808080;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.game-categories {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  background-color: #c0c0c0;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.category-item:hover {
+  background-color: #000080;
+  color: #ffffff;
+}
+
+.category-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.window-controls {
+  display: flex;
+}
+
+.minimize-button,
+.maximize-button,
+.close-button {
+  background-color: #c0c0c0;
+  border: 1px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  padding: 0 5px;
+  margin-left: 2px;
+  font-size: 12px;
+  line-height: 14px;
+  cursor: pointer;
+}
+
+.minimize-button:active,
+.maximize-button:active,
+.close-button:active {
+  border: 1px solid #808080;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.taskbar-item.active {
+  border: 1px solid #808080;
+  border-top-color: #000000;
+  border-left-color: #000000;
+}
+
+.alert-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #c0c0c0;
+  border: 1px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  width: 300px;
+  z-index: 1000;
+}
+
+.alert-window .title-bar {
+  background-color: #000080;
+  color: #ffffff;
+  padding: 2px 5px;
+  margin: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert-window .window-content {
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alert-window button {
+  padding: 5px 10px;
+  background-color: #c0c0c0;
+  border: 1px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  cursor: pointer;
+}
+
+.alert-window button:active {
+  border: 1px solid #808080;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.game-window {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.game-window iframe {
+  border: none;
+}
+
+.desktop-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  overflow: hidden;
+}
+
+.desktop-icon {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 64px;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #000000;
+  cursor: move;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.desktop-icon img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 5px;
+}
+
+.desktop-icon span {
+  font-size: 12px;
+  word-wrap: break-word;
+}
+
+.window-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.taskbar-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-content {
+  background-color: #c0c0c0;
+  border: 1px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #000080;
+  border-top: 4px solid #c0c0c0;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-content p {
+  margin: 0;
+  font-size: 14px;
+}
