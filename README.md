@@ -1,6 +1,6 @@
-# 🪟 windoge95
+# 🪟 Windoge95
 
-**A retro-themed Ethereum dApp inspired by Windows 95 — built with Hardhat, React, and smart contracts.**
+**A retro-themed Ethereum dApp inspired by Windows 95 - built with Hardhat, React, and smart contracts.**
 
 ![Windoge95 UI Preview](./screenshot.png)
 
@@ -24,8 +24,6 @@
 
 ## 📂 Project Structure
 
-![Project Structure](./1da767e3-d915-43b4-85d8-e7596f4ace66.png)
-
 ```text
 windoge95/
 ├── contracts/          # Solidity contracts
@@ -36,13 +34,11 @@ windoge95/
 └── README.md           # You're here
 ```
 
-
 ## 🔗 Inspiration
 
-This project is heavily inspired by  
-🪟 [React95](https://github.com/react95-io/React95)
+This project draws heavy inspiration from [React95](https://github.com/react95-io/React95)
 
-Big kudos to the React95 team for the vibe, visuals, and open-source spirit.
+Huge thanks to the React95 team for setting the standard — and for fostering a positive, collaborative, and open-source-first spirit that made projects like this possible.
 
 ---
 
